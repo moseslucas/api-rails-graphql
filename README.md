@@ -1,24 +1,35 @@
-# README
+# api-rails-graphql
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a boilerplate for building a backend using: **rails api** only & [graphql](graphql.org).
 
-Things you may want to cover:
+# Product Dependencies
+```
+ gem 'rails', '~> 5.1.4'
+ gem 'pg', '~> 0.18'
+ gem 'puma', '~> 3.7'
+ gem 'graphql'
+ 
+ # in order to make graphiql work, these two gems are required
+ gem 'sass-rails'
+ gem 'uglifier'
+ 
+ # add to development
+ gem 'graphiql-rails', '~> 1.4.8'
+```
+### Installing
+1. Clone this repository.
+If you're a non-git user [download this as zip file](https://github.com/moseslucas/api-rails-graphql/archive/master.zip)
 
-* Ruby version
+2. Go to app directory and run: `bundle install && rails db:setup`
+3. Start the server: `rails s`
+4. Open browser and navigate to `localhost:3000/graphiql`
 
-* System dependencies
+## Authors
 
-* Configuration
+* **Moses Lucas**
 
-* Database creation
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-* Database initialization
+## License
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
