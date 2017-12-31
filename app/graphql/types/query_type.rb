@@ -8,4 +8,23 @@ Types::QueryType = GraphQL::ObjectType.define do
       Movie.all
     }
   end
+
+  field :allOperators, !types[Types::OperatorType] do
+    resolve -> (obj, args, ctx) {
+      Operator.all
+    }
+  end
+
+  field :allDrivers, !types[Types::DriverType] do
+    resolve -> (obj, args, ctx) {
+      Driver.all
+    }
+  end
+
+  field :allAssignments, !types[Types::AssignmentType] do
+    resolve -> (obj, args, ctx) {
+      Assignment.all
+    }
+  end
+
 end

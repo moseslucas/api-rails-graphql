@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171231073643) do
+ActiveRecord::Schema.define(version: 20171231122901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.bigint "driver_id"
+    t.bigint "operator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["driver_id"], name: "index_assignments_on_driver_id"
+    t.index ["operator_id"], name: "index_assignments_on_operator_id"
+  end
+
+  create_table "drivers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -22,4 +37,12 @@ ActiveRecord::Schema.define(version: 20171231073643) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "operators", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "assignments", "drivers"
+  add_foreign_key "assignments", "operators"
 end

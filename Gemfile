@@ -10,9 +10,6 @@ gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'graphql', '~> 1.7.7'
- # in order to make graphiql work, these two gems are required
-gem 'sass-rails'
-gem 'uglifier'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -25,6 +22,10 @@ group :development, :test do
 end
 
 group :development do
+   # in order to make graphiql work, these two gems are required
+  gem 'sass-rails'
+  gem 'uglifier'
+
   gem 'faker'
   gem 'graphiql-rails', '~> 1.4.8'
   gem 'listen', '>= 3.0.5', '< 3.2'
