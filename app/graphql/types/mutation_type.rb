@@ -8,4 +8,6 @@ Types::MutationType = GraphQL::ObjectType.define do
       "Hello World!"
     }
   end
+  
+  field :createMovie, function: Mutations::CreateMovie.new
 end
